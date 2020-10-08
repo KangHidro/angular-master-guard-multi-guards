@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "ng-test-multi-guard"
+    }
+  },
+  "defaultProject": "ng-test-multi-guard",
+  "cli": {
+    "analytics": false
+  }
 }
