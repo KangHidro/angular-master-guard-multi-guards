@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { Injectable, Injector } from '@angular/core';
 import { CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot, Data, Router } from '@angular/router';
-import { Observable, from } from 'rxjs';
+import { Observable, from, of } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -125,6 +125,6 @@ export class MasterGuard implements CanActivate, CanActivateChild {
       return Promise.resolve(result);
     }
 
-    return from(result).toPromise() as Promise<boolean>;
+    return from(result ? result : of(false)).toPromise() as Promise<boolean>;
   }
 }
